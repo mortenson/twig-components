@@ -1,0 +1,15 @@
+{
+  "name": "twig-components",
+  "version": "1.0.0",
+  "description": "Web components that use Twig templates.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Samuel Mortenson <samuel@mortenson.coffee>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "twig": "^1.10.5"
+  }
+}
