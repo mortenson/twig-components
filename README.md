@@ -19,3 +19,12 @@ $ npm install -g parcel-bundler
 $ npm install
 $ parcel index.html
 ```
+
+# Todo
+
+- [ ] Create base custom element
+- [ ] Import SCSS/Twig from a file during parcel-ing
+- [ ] Create a Yeoman generator for new components
+- [ ] Figure out what production packaging looks like
+- [ ] Implment server-side-rendering with PHP Twig
+- [ ] Write a ton of docs
