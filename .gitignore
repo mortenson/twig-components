@@ -1,6 +1,5 @@
 node_modules
 .idea
 dist
-examples/components.js
-examples/components.es5.js
+examples/components.*
 examples/templates.json
