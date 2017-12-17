@@ -12,19 +12,19 @@ share templates and styling
 
 # Installation and development
 
-More docs will come soon, but for now this is how you run the build: 
+More docs will come soon, but this is how you build the example:
 
 ```
-$ npm install -g parcel-bundler
 $ npm install
-$ parcel index.html
+$ npm run build-example
+$ open examples/index.html
 ```
 
 # Todo
 
-- [ ] Create base custom element
-- [ ] Import SCSS/Twig from a file during parcel-ing
+- [x] Create base custom element
+- [x] Import SCSS/Twig from a file during build
 - [ ] Create a Yeoman generator for new components
-- [ ] Figure out what production packaging looks like
+- [ ] Figure out what production packaging looks like (50%)
 - [ ] Implment server-side-rendering with PHP Twig
 - [ ] Write a ton of docs

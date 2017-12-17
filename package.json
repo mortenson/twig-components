@@ -4,12 +4,17 @@
   "description": "Web components that use Twig templates.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-example": "node bundle.js examples && cd examples && webpack"
   },
   "author": "Samuel Mortenson <samuel@mortenson.coffee>",
   "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
-    "twig": "^1.10.5"
+    "fs-extra": "^5.0.0",
+    "node-sass": "^4.7.2",
+    "twig": "^1.10.5",
+    "webpack": "^3.10.0"
   }
 }
