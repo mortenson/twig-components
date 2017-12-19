@@ -2,9 +2,12 @@ import Twig from 'twig';
 
 export default class TwigBase extends HTMLElement {
 
+  static get observedAttributes() {
+    return [];
+  }
+
   constructor() {
     super();
-    this.template = '';
     this.attachShadow({ mode: 'open' });
   }
 
@@ -12,8 +15,8 @@ export default class TwigBase extends HTMLElement {
     this.render();
   }
 
-  static get observedAttributes() {
-    return [];
+  attributeChangedCallback(name, oldValue, newValue) {
+    this.render();
   }
 
   getTemplateVariables() {
@@ -26,14 +29,14 @@ export default class TwigBase extends HTMLElement {
     return attributes;
   }
 
-  render() {
-    this.shadowRoot.innerHTML = Twig.twig({
-      data: this.constructor.template
-    }).render(this.getTemplateVariables());
+  renderTemplate(variables) {
+    return Twig.twig({
+      data: this.constructor.template || '',
+    }).render(variables);
   }
 
-  attributeChangedCallback(name, oldValue, newValue) {
-    this.render();
+  render() {
+    this.shadowRoot.innerHTML = this.renderTemplate(this.getTemplateVariables());
   }
 
 }

@@ -2,6 +2,10 @@ import TwigBase from '../../twig-base';
 
 export default class SmartHeader extends TwigBase {
 
+  renderTemplate(variables) {
+    return require('./smart-header.twig')(variables);
+  }
+
   connectedCallback() {
     let parent = this.parentElement;
     this.depth = 1;

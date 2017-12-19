@@ -6,4 +6,8 @@ export default class ProperName extends TwigBase {
     return ['first', 'last', 'suffix'];
   }
 
+  renderTemplate(variables) {
+    return require('./proper-name.twig')(variables);
+  }
+
 }

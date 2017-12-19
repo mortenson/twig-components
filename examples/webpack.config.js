@@ -1,6 +1,14 @@
+const path = require('path');
+
 module.exports = {
-  entry: './components.js',
+  entry: {
+    components: './components.js'
+  },
   devtool: 'source-map',
+  devServer: {
+    inline: false,
+    open: true
+  },
   output: {
     filename: 'components.es5.js'
   },
@@ -15,6 +23,20 @@ module.exports = {
             presets: ['env'],
           }
         }
+      },
+      {
+        test: /\.twig$/,
+        use: [
+          { loader: 'twig-loader' },
+          { loader: path.resolve('loader.js') }
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          { loader: 'css-loader' },
+          { loader: 'sass-loader' }
+        ],
       }
     ]
   }

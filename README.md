@@ -16,8 +16,7 @@ More docs will come soon, but this is how you build the example:
 
 ```
 $ npm install
-$ npm run build-example
-$ open examples/index.html
+$ npm run watch-example
 ```
 
 # Todo
