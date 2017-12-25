@@ -19,7 +19,17 @@ $ npm install
 $ npm run dev-example
 ```
 
-and run a final build with `npm run build-example`.
+# Server side rendering proof of concept
+
+A proof of concept for server side rendering with PHP can be seen by running:
+
+```
+$ npm install
+$ npm run build-example
+$ cd example
+$ composer install
+$ php -S 127.0.0.1:12345
+```
 
 # Todo
 
@@ -27,5 +37,5 @@ and run a final build with `npm run build-example`.
 - [x] Import SCSS/Twig from a file during build
 - [ ] Create a Yeoman generator for new components
 - [ ] Figure out what production packaging looks like (50%)
-- [ ] Implment server-side-rendering with PHP Twig
+- [ ] Implment server-side-rendering with PHP Twig (50%)
 - [ ] Write a ton of docs

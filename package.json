@@ -4,8 +4,8 @@
   "description": "Web components that use Twig templates.",
   "main": "index.js",
   "scripts": {
-    "build-example": "cd examples && webpack && node build.js",
-    "dev-example": "cd examples && webpack-dev-server"
+    "build-example": "cd example && webpack && node build.js",
+    "dev-example": "cd example && webpack-dev-server"
   },
   "author": "Samuel Mortenson <samuel@mortenson.coffee>",
   "license": "MIT",
