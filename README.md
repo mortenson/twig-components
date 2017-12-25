@@ -12,12 +12,14 @@ share templates and styling
 
 # Installation and development
 
-More docs will come soon, but this is how you build the example:
+More docs will come soon, but you can run a dev server with
 
 ```
 $ npm install
-$ npm run watch-example
+$ npm run dev-example
 ```
+
+and run a final build with `npm run build-example`.
 
 # Todo
 
