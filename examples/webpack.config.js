@@ -28,7 +28,7 @@ module.exports = [
         {
           test: /\.twig$/,
           use: [
-            { loader: 'twig-loader' },
+            { loader: 'raw-loader' },
             { loader: path.resolve('loader.js') }
           ]
         },

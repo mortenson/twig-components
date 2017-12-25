@@ -19,7 +19,6 @@
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.6",
     "twig": "^1.10.5",
-    "twig-loader": "^0.3.1",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
   },

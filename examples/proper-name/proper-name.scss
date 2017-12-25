@@ -1,7 +1,10 @@
+@import '../settings';
+
 .name {
-  color: black;
+  color: $font-color;
 }
+
 .suffix {
-  color: darkgray;
+  color: $emphasis-color;
   font-style: italic;
 }

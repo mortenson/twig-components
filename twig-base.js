@@ -31,7 +31,7 @@ export default class TwigBase extends HTMLElement {
 
   renderTemplate(variables) {
     return Twig.twig({
-      data: this.constructor.template || '',
+      data: this.getTemplate()
     }).render(variables);
   }
 
