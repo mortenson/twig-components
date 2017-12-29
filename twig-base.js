@@ -19,6 +19,10 @@ export default class TwigBase extends HTMLElement {
     this.render();
   }
 
+  getTemplate() {
+    return '';
+  }
+
   getTemplateVariables() {
     let attributes = {};
     this.constructor.observedAttributes.forEach((attribute) => {

@@ -1,28 +1,14 @@
 {
   "name": "twig-components",
   "version": "0.0.1",
-  "description": "Web components that use Twig templates.",
-  "main": "index.js",
-  "scripts": {
-    "build-example": "cd example && webpack && node build.js",
-    "dev-example": "cd example && webpack-dev-server"
-  },
+  "description": "Provides the base for Twig-based web components.",
   "author": "Samuel Mortenson <samuel@mortenson.coffee>",
   "license": "MIT",
   "devDependencies": {
-    "@webcomponents/webcomponentsjs": "^1.0.22",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-minify-webpack-plugin": "^0.2.0",
-    "babel-preset-env": "^1.6.1",
-    "css-loader": "^0.28.7",
-    "inline-source": "^5.2.6",
-    "node-sass": "^4.7.2",
-    "raw-loader": "^0.5.1",
-    "sass-loader": "^6.0.6",
-    "twig": "^1.10.5",
-    "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.9.7"
+    "twig": "^1.10.5"
   },
+  "files": [
+    "twig-base.js"
+  ],
   "dependencies": {}
 }
