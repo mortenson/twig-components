@@ -10,6 +10,10 @@ Beyond being useful to users already using something like [Twig.js](https://gith
 Javascript. This is critical for progressive enhancement, SEO, and
 accessibility. A PHP server side renderer is already in development.
 
+# Installation
+
+`npm install --save-dev twig-components`
+
 # Extending the base component
 
 The base component in `twig-base.js` can be extended minimally by implementing
