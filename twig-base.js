@@ -1,7 +1,6 @@
 import Twig from 'twig';
 
 export default class TwigBase extends HTMLElement {
-
   static get observedAttributes() {
     return [];
   }
@@ -15,7 +14,7 @@ export default class TwigBase extends HTMLElement {
     this.render();
   }
 
-  attributeChangedCallback(name, oldValue, newValue) {
+  attributeChangedCallback() {
     this.render();
   }
 
@@ -24,7 +23,7 @@ export default class TwigBase extends HTMLElement {
   }
 
   getTemplateVariables() {
-    let attributes = {};
+    const attributes = {};
     this.constructor.observedAttributes.forEach((attribute) => {
       if (this.hasAttribute(attribute)) {
         attributes[attribute] = this.getAttribute(attribute);
@@ -35,12 +34,11 @@ export default class TwigBase extends HTMLElement {
 
   renderTemplate(variables) {
     return Twig.twig({
-      data: this.getTemplate()
+      data: this.getTemplate(),
     }).render(variables);
   }
 
   render() {
     this.shadowRoot.innerHTML = this.renderTemplate(this.getTemplateVariables());
   }
-
 }
