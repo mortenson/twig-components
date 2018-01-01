@@ -26,7 +26,7 @@ export default class TwigBase extends HTMLElement {
     const attributes = {};
     this.constructor.observedAttributes.forEach((attribute) => {
       if (this.hasAttribute(attribute)) {
-        attributes[attribute] = this.getAttribute(attribute);
+        attributes[attribute.replace('-', '_')] = this.getAttribute(attribute);
       }
     });
     return attributes;
