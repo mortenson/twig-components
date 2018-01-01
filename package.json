@@ -1,6 +1,6 @@
 {
   "name": "twig-components",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Provides the base for Twig-based web components.",
   "author": "Samuel Mortenson <samuel@mortenson.coffee>",
   "license": "MIT",
