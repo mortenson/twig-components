@@ -40,7 +40,7 @@ customElements.define('my-component', MyComponent);
 Then, when `<my-component name="World"></my-component>` is placed on a page,
 the template will be compiled and rendered with the current attributes.
 
-# Creating a component library
+# Creating a component library with Webpack
 
 While extending the base component in the above example seems easy, getting it
 working in production has a few hard problems:
@@ -56,29 +56,17 @@ new component library, which has a complex Webpack configuration that does all
 of this out of the box. See [generator-twig-components-webpack](https://github.com/mortenson/generator-twig-components-webpack)
 for more details.
 
-# Supporting server side rendering
+# Distribution specification
 
-To support server side rendering in PHP, it is recommended that a JSON file be
-distributed with production JS files named `templates.json`. The JSON in this
-file should contain an object that maps tag names to Twig templates.
-
-For example, the earlier `MyComponent` example would be represented as:
-
-```json
-{
-  "my-component": "Hello {{ name }}!"
-}
-```
-
-Only include components in this file that can be rendered on the server,
-if a Javascript runtime is required to represent the initial state of the
-component simply omit it from `templates.json`.
+To help keep various distribution and bundling methods consistent, a
+specification is maintained in [DISTRIBUTION.md](DISTRIBUTION.md).
 
 # Todo
 
 - [x] Create base custom element
 - [x] Import SCSS/Twig from a file during build
 - [x] Create a Yeoman generator for new components
-- [ ] Figure out what production packaging looks like (50%)
+- [x] Figure out what production packaging looks like
+- [ ] Write unit test coverage for the base class
 - [ ] Implment server-side-rendering with PHP Twig (50%)
-- [ ] Write a ton of docs (50%)
+- [ ] Write a ton of docs
