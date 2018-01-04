@@ -1,2 +1,4 @@
 node_modules
 .idea
+examples/mycomponent.bundle.js
+bower_components

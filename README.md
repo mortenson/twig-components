@@ -1,3 +1,5 @@
+[![npm](https://img.shields.io/npm/v/twig-components.svg)]() [![Build Status](https://travis-ci.org/mortenson/twig-components.svg?branch=master)](https://travis-ci.org/mortenson/twig-components)
+
 # Twig Components
 
 An experimental repository to use Twig templates in Web Components.
@@ -29,7 +31,7 @@ class MyComponent extends TwigBase {
   }
 
   getTemplate() {
-    'Hello {{ name }}!';
+    return 'Hello {{ name }}!';
   }
 
 }
@@ -61,12 +63,25 @@ for more details.
 To help keep various distribution and bundling methods consistent, a
 specification is maintained in [DISTRIBUTION.md](DISTRIBUTION.md).
 
+# Running tests
+
+Tests for the base class are written with the [web-component-tester](https://github.com/Polymer/web-component-tester)
+package.
+
+Before running tests, you'll need to setup your local environment:
+
+1. Java is available in your `PATH`
+1. Run `npm install -g bower rollup web-component-tester`
+1. Run `bower install`
+
+After all dependencies have been installed, run `npm run test`.
+
 # Todo
 
 - [x] Create base custom element
 - [x] Import SCSS/Twig from a file during build
 - [x] Create a Yeoman generator for new components
 - [x] Figure out what production packaging looks like
-- [ ] Write unit test coverage for the base class
+- [x] Write unit test coverage for the base class
 - [ ] Implment server-side-rendering with PHP Twig (50%)
 - [ ] Write a ton of docs
