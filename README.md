@@ -10,7 +10,10 @@ specifications for what distributed Twig components should look like.
 Beyond being useful to users already using something like [Twig.js](https://github.com/twigjs/twig.js)
 , using Twig templates opens the door to server side rendering _without_
 Javascript. This is critical for progressive enhancement, SEO, and
-accessibility. A PHP server side renderer is already in development.
+accessibility.
+
+If you're using PHP and want to try out server side rendering, check out
+[twig-components-ssr](https://github.com/mortenson/twig-components-ssr).
 
 # Installation
 
@@ -83,5 +86,5 @@ After all dependencies have been installed, run `npm run test`.
 - [x] Create a Yeoman generator for new components
 - [x] Figure out what production packaging looks like
 - [x] Write unit test coverage for the base class
-- [ ] Implment server-side-rendering with PHP Twig (50%)
+- [x] Implment server-side-rendering with PHP Twig
 - [ ] Write a ton of docs
