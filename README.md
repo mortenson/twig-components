@@ -61,6 +61,12 @@ new component library, which has a complex Webpack configuration that does all
 of this out of the box. See [generator-twig-components-webpack](https://github.com/mortenson/generator-twig-components-webpack)
 for more details.
 
+# Example project
+
+An example project with some useful Twig Components is maintained at [twig-components-example](https://github.com/mortenson/twig-components-example).
+
+The project was built using Yeoman, please check it out!
+
 # Distribution specification
 
 To help keep various distribution and bundling methods consistent, a
