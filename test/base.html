@@ -1,16 +1,30 @@
 <html>
   <head>
-    <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../bower_components/webcomponentsjs/webcomponents-loader.js"></script>
     <script src="../bower_components/web-component-tester/browser.js"></script>
     <script src="../node_modules/twig/twig.min.js"></script>
-    <script type="module" src="../examples/mycomponent.bundle.js"></script>
+    <script type="module" src="../example/components.bundle.js"></script>
   </head>
   <body>
     <my-component name="World" user-prompt="Is it working yet" id="testcase-1"></my-component>
+    <my-slotted id="testcase-2">Hello World!</my-slotted>
+    <my-slotted id="testcase-3" data-ssr-content="Original">Data from server side rendering</my-slotted>
     <script>
       suite('<my-component>', () => {
         test('did render', () => {
           assert.equal(document.getElementById('testcase-1').shadowRoot.innerHTML, 'Hello World! Is it working yet?')
+        });
+      });
+      suite('<my-slotted>', () => {
+        test('did render', () => {
+          const element = document.getElementById('testcase-2');
+          assert.equal(element.shadowRoot.innerHTML, 'Your content: <slot></slot>');
+          assert.equal(element.shadowRoot.childNodes[1].assignedNodes()[0].textContent, 'Hello World!');
+        });
+        test('did replace ssr content', () => {
+          const element = document.getElementById('testcase-3');
+          assert.equal(element.shadowRoot.innerHTML, 'Your content: <slot></slot>');
+          assert.equal(element.shadowRoot.childNodes[1].assignedNodes()[0].textContent, 'Original');
         });
       });
     </script>

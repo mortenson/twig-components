@@ -11,3 +11,15 @@ class MyComponent extends TwigBase {
 }
 
 customElements.define('my-component', MyComponent);
+
+class MySlotted extends TwigBase {
+  static get observedAttributes() {
+    return [];
+  }
+
+  getTemplate() {
+    return 'Your content: <slot />';
+  }
+}
+
+customElements.define('my-slotted', MySlotted);

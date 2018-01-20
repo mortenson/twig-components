@@ -7,6 +7,9 @@ export default class TwigBase extends HTMLElement {
 
   constructor() {
     super();
+    if (this.dataset.ssrContent) {
+      this.innerHTML = this.dataset.ssrContent;
+    }
     this.attachShadow({ mode: 'open' });
   }
 

@@ -7,7 +7,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run build-example && wct",
-    "build-example": "rollup examples/mycomponent.js --output.format iife --output.file examples/mycomponent.bundle.js",
+    "build-example": "rollup example/components.js --output.format iife --output.file example/components.bundle.js",
     "eslint": "eslint ."
   },
   "dependencies": {
