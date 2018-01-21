@@ -45,7 +45,7 @@ customElements.define('my-component', MyComponent);
 Then, when `<my-component name="World"></my-component>` is placed on a page,
 the template will be compiled and rendered with the current attributes.
 
-You can read the [Wiki page](https://github.com/mortenson/twig-components/wiki/Building-your-first-component-from-scratch#bundling-your-component) on this topic for more detailed information.
+You can read the [Wiki page](https://github.com/mortenson/twig-components/wiki/Building-your-first-component-from-scratch) on this topic for more detailed information.
 
 # Creating a component library with Webpack
 
@@ -65,7 +65,7 @@ for more details.
 
 # Example project
 
-An example project with some useful Twig Components is maintained at [twig-components-example](https://github.com/mortenson/twig-components-example).
+An example project with some useful Twig Components is maintained at [twig-components-example](https://github.com/mortenson/twig-components-example). If you want to view a live demo of the example project, [click here](https://mortenson.coffee/twig-components-example/).
 
 The project was built using Yeoman, please check it out!
 
@@ -95,4 +95,4 @@ After all dependencies have been installed, run `npm run test`.
 - [x] Figure out what production packaging looks like
 - [x] Write unit test coverage for the base class
 - [x] Implment server-side-rendering with PHP Twig
-- [ ] Write a ton of docs
+- [x] Write a ton of docs
