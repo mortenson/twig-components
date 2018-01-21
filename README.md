@@ -45,6 +45,8 @@ customElements.define('my-component', MyComponent);
 Then, when `<my-component name="World"></my-component>` is placed on a page,
 the template will be compiled and rendered with the current attributes.
 
+You can read the [Wiki page](https://github.com/mortenson/twig-components/wiki/Building-your-first-component-from-scratch#bundling-your-component) on this topic for more detailed information.
+
 # Creating a component library with Webpack
 
 While extending the base component in the above example seems easy, getting it
