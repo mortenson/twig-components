@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "test": "npm run build-example && wct",
+    "test": "npm run build-example && bower install web-component-tester && wct",
     "build-example": "rollup example/components.js --output.format iife --output.file example/components.bundle.js",
     "eslint": "eslint ."
   },

@@ -79,13 +79,11 @@ specification is maintained in [DISTRIBUTION.md](DISTRIBUTION.md).
 Tests for the base class are written with the [web-component-tester](https://github.com/Polymer/web-component-tester)
 package.
 
-Before running tests, you'll need to setup your local environment:
+To run tests:
 
-1. Java is available in your `PATH`
+1. Ensure that Java is available in your `PATH`
 1. Run `npm install -g bower rollup web-component-tester`
-1. Run `bower install`
-
-After all dependencies have been installed, run `npm run test`.
+1. Run `npm run test`
 
 # Todo
 
