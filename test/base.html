@@ -8,7 +8,7 @@
   <body>
     <my-component name="World" user-prompt="Is it working yet" id="testcase-1"></my-component>
     <my-slotted id="testcase-2">Hello World!</my-slotted>
-    <my-slotted id="testcase-3" data-ssr-content="Original">Data from server side rendering</my-slotted>
+    <my-slotted id="testcase-3" data-ssr-content="&quot;Original&quot;">Data from server side rendering</my-slotted>
     <script>
       suite('<my-component>', () => {
         test('did render', () => {
