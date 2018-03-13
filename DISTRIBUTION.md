@@ -12,38 +12,33 @@ component libraries.
 - `dist/components.bundled.js` - The components transpiled to ES5, _with_
 Twig.js and the polyfills included. You should be able to include this on
 any HTML page.
-- `dist/templates.js` - A Node compatible module that exports an object mapping
-tag names to Twig templates. This is useful for server side rendering in Node.
-- `dist/templates.json` - A JSON file mapping tag names to Twig templates. This
-is useful for server side rendering in PHP (see below).
+- `dist/[tag-name].js` - A file for each component transpiled to ES5, _without_
+any polyfills or the Twig.js library. This is useful for performance reasons,
+as a pages should only have to include the minimum JS required to render.
 
 # Supporting server side rendering
 
-To support server side rendering in PHP, it is recommended that a JSON file be
-distributed with production JS files named `templates.json`. The JSON in this
-file should contain an object that maps tag names to Twig templates.
+To support server side rendering in PHP, it is recommended that Twig templates
+are distributed in `dist/templates`, in the same relative directory structure
+as their source.
 
-For example, the earlier `MyComponent` example would be represented as:
+Let's say you have a component template in `proper-name/proper-name.twig`,
+which has the statement `{% '../header.twig' %}`. Your distributed templates
+should be `dist/templates/proper-name/proper-name.twig` and
+`dist/templates/header.twig`.
 
-```json
-{
-  "my-component": "Hello {{ name }}!"
-}
-```
-
-Only include components in this file that can be rendered on the server,
-if a Javascript runtime is required to represent the initial state of the
-component simply omit it from `templates.json`.
+By keeping the template structure relatively the same, server side renderers
+can process your template without errors. 
 
 # A note on using Twig's import, include, extends and embed
 
 Twig provides a variety of methods to re-use templates, but in the context of
-Web Components and server side rendering, things can get tricky.
+Web Components, things can get tricky.
 
 Let's say you have a template that looks like this:
 
 ```twig
-{% embed "reused.html.twig" %}
+{% embed "reused.twig" %}
   {% block foo %} {{ attribute_name }} {% endblock %}
 {% endembed %}
 ```
@@ -55,24 +50,11 @@ and likely fail. Yikes!
 
 In my experience, the best way around this problem is to pre-compile the
 template before distribution, using something like
-[twig-loader](https://github.com/zimmo-be/twig-loader).
+[twig-loader](https://github.com/zimmo-be/twig-loader). Twig loader will parse
+your template as a part of your Webpack build, which means faster render times
+for clients, and support for re-using templates.
 
-This is a great solution for JS-only Twig Components, but PHP Twig can't
-process a compiled Twig.js template - it has to access a "raw" template file.
-If you put the template above in `/dist/templates.json`, PHP would look for
-`reused.html.twig` inside `dist`. You could add all the re-usable templates to
-`dist` yourself, but that's hard to automate with a build process.
+# Example project
 
-There are a few solutions on the table for server side rendering with other
-templates, but none feel "right" yet:
- 
-1. Don't use import/include/extends/embed in your Twig Component templates.
-Instead, create new components for shared templates instead and nest your
-components.
-1. Change this specification so that instead of `templates.json`, all the
- template files are distributed in `dist` in the same directory structure as
- the source.
-1. Make it clear in documentation that if you use shared templates, server side
-rendering will just not work.
-
-Any input on the above in issues or private messages are welcome.
+For an example project that follows this specification, see:
+[generator-twig-components-webpack](https://github.com/mortenson/generator-twig-components-webpack)
