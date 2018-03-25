@@ -7,13 +7,13 @@ export default class TwigBase extends HTMLElement {
 
   constructor() {
     super();
-    if (this.dataset.ssrContent) {
-      this.innerHTML = JSON.parse(this.dataset.ssrContent);
-    }
     this.attachShadow({ mode: 'open' });
   }
 
   connectedCallback() {
+    if (this.dataset.ssrContent) {
+      this.innerHTML = JSON.parse(this.dataset.ssrContent);
+    }
     this.render();
   }
 
